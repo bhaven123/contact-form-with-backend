@@ -31,9 +31,9 @@ const ContactForm = () => {
     onSubmit: async (data) => {
       console.log(data);
       // Using axios to send a post request to the backend server on form submission
-      const response = await axios.post({
-        method: "POST",
-        url: "http://localhost:5000/users/submit",
+      const response = await axios({
+        url: "http://localhost:5000/submit",
+        method: "post",
         data: data,
       });
       console.log(response);
@@ -41,13 +41,7 @@ const ContactForm = () => {
   });
 
   return (
-    <form
-      onSubmit={formik.handleSubmit}
-      id="contact-form"
-      encType="multipart/form-data"
-      method="POST"
-      action="/users/submit"
-    >
+    <form onSubmit={formik.handleSubmit} id="contact-form">
       {/* Using Material UI to design the Form */}
       <Box
         sx={{

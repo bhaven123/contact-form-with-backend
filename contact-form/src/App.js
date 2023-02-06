@@ -1,5 +1,5 @@
 import { createTheme, CssBaseline, ThemeProvider } from "@mui/material";
-import ContactForm from "./components/Contact Form/ContactForm";
+import ContactForm from "./components/ContactForm";
 
 function App() {
   const theme = createTheme({
