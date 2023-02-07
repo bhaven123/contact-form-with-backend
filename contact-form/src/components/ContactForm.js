@@ -1,10 +1,12 @@
 import axios from "axios";
 import Button from "@mui/material/Button";
 import { useFormik } from "formik";
-import { Avatar, Grid, TextField, Typography } from "@mui/material";
+import { Avatar, Grid, TextField, Typography, Modal } from "@mui/material";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Box } from "@mui/system";
 import * as yup from "yup";
+import { useState } from "react";
 
 // Creating yup schema for parsing and validation
 const validationSchema = yup.object({
@@ -20,6 +22,11 @@ const validationSchema = yup.object({
 });
 
 const ContactForm = () => {
+  // State Management for Modal when submitting
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const handleOpen = () => setIsSubmitting(true);
+  const handleClose = () => setIsSubmitting(false);
+
   // Using Formik to handle form submission, validation and error messages in and out of form state
   const formik = useFormik({
     initialValues: {
@@ -29,7 +36,7 @@ const ContactForm = () => {
     },
     validationSchema: validationSchema,
     onSubmit: async (data) => {
-      console.log(data);
+      setIsSubmitting(true);
       // Using axios to send a post request to the backend server on form submission
       const response = await axios({
         url: "http://localhost:5000/submit",
@@ -37,6 +44,7 @@ const ContactForm = () => {
         data: data,
       });
       console.log(response);
+      setIsSubmitting(false);
     },
   });
 
@@ -109,9 +117,43 @@ const ContactForm = () => {
             fullWidth
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
+            onClick={handleOpen}
           >
             Submit
           </Button>
+          <Modal
+            open={isSubmitting}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+            closeAfterTransition
+          >
+            <Box
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: 400,
+                bgcolor: "background.paper",
+                border: "2px solid #000",
+                boxShadow: 24,
+                pt: 2,
+                px: 4,
+                pb: 3,
+              }}
+            >
+              <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+                <CheckCircleIcon />
+              </Avatar>
+              <Typography id="modal-modal-title" variant="h6" component="h2">
+                Thank You!
+              </Typography>
+              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                The form was submitted successfully.
+              </Typography>
+            </Box>
+          </Modal>
         </Box>
       </Box>
     </form>

@@ -10,7 +10,7 @@ const HTML_TEMP = (name, email, message) => {
     <table style="background-color:#ccd6f6; border-collapse:collapse; font-family: Arial, Helvetica, sans-serif; width: 50%; margin:auto;">
       <thead>
         <tr>
-          <th scope="col" style="padding: 15px; margin: auto;">Form Submission</th>
+          <th scope="col" style="padding: 15px;">Form Submission</th>
         </tr>
       </thead>
       <tbody>
