@@ -39,7 +39,7 @@ const ContactForm = () => {
       setIsSubmitting(true);
       // Using axios to send a post request to the backend server on form submission
       const response = await axios({
-        url: "http://localhost:5000/submit",
+        url: "http://localhost:4000/submit",
         method: "post",
         data: data,
       });
