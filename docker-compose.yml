@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  frontend:
+    container_name: contact_form_fe
+    build:
+      context: ./contact-form
+    ports:
+      - 3000:3000
+    stdin_open: true
+    volumes:
+      - ./contact-form:/app
+      - /app/node_modules
+    restart: always
+  backend:
+    container_name: express_nodemailer_be
+    restart: always
+    build: 
+      context: ./server
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+    ports:
+      - 4000:4000
