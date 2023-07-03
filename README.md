@@ -2,7 +2,7 @@
 
 ## About The Project
 
-This repositorty contains a simple Full-Stack Contact Form. The aim of the project is to create a contact form that can be integrated into any portfolio or website. The app uses ReactJS for the frontend, it's designed using Material-UI, and uses ExpressJS for the backend server. The frontend project files have been created using `npx create-react-app`. The backend project files have been created using `npx express-generator`. Some cleanup has been done to the folder structures.
+This repository contains a simple Full-Stack Contact Form. The aim of the project is to create a contact form that can be integrated into any portfolio or website. The app uses ReactJS for the frontend, it's designed using Material-UI, and uses ExpressJS for the backend server. The frontend project files have been created using `npx create-react-app`. The backend project files have been created using `npx express-generator`. Some cleanup has been done to the folder structures.
 
 ### Built With
 
@@ -15,7 +15,7 @@ This repositorty contains a simple Full-Stack Contact Form. The aim of the proje
 ### Prerequisites
 
 - npm
-  ```
+  ```javascript
   npm install npm@latest -g
   ```
 
@@ -23,19 +23,19 @@ This repositorty contains a simple Full-Stack Contact Form. The aim of the proje
 
 1. Clone the repo
 
-   ```
+   ```javascript
    git clone https://github.com/bhaven123/contact-form-with-backend.git
    ```
 
 2. Install NPM packages
 
-   ```
+   ```javascript
    npm install
    ```
 
 ## Usage
 
-Screenshots:
+### Screenshots
 
 1. Frontend UI
 
