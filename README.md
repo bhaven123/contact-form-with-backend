@@ -8,7 +8,7 @@ This repositorty contains a simple Full-Stack Contact Form. The aim of the proje
 
 - [![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logocolor=%2361dafb)](https://reactjs.org/)
 - [![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/)
-- [![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://reactjs.org/)
+- [![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)](https://expressjs.com/)
 
 ## Getting Started
 
